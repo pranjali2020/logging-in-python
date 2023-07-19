@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "disable_existing_loggers": true,
+    "formatters": {
+      "standard": {
+        "class": "logging.Formatter",
+        "datefmt": "%Y-%m-%d %H:%M:%S",
+        "format": "%(asctime)s, Function: %(funcName)s, %(levelname)s: %(message)s"
+      },
+      "multiline": {
+        "class": "logging.Formatter",
+        "format": "Level: %(levelname)s\nTime: %(asctime)s\nProcess: %(process)d\nThread: %(threadName)s\nLogger: %(name)s\nPath: %(module)s:%(lineno)d\nFunction: %(funcName)s\nMessage: %(message)s\n"
+      }
+    },
+    "handlers": {
+      "console": {
+        "level": "DEBUG",
+        "class": "logging.StreamHandler",
+        "formatter": "standard",
+        "stream" : "ext://sys.stdout"
+      },
+      "file_handler": {
+        "level": "DEBUG",
+        "class": "logging.handlers.RotatingFileHandler",
+        "formatter": "standard",
+        "backupCount" : 10,
+        "maxBytes" : 100000,
+        "filename": "Logs/anomaly_detection.txt",
+        "mode": "a",
+        "encoding": "utf-8"
+      }
+    },
+    "loggers": { },
+    "root": {
+      "handlers": ["console", "file_handler"],
+      "level": "DEBUG"
+    }
+}
+
