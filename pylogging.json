@@ -25,7 +25,7 @@
         "formatter": "standard",
         "backupCount" : 10,
         "maxBytes" : 100000,
-        "filename": "Logs/anomaly_detection.txt",
+        "filename": "Logs/log_file_.txt",
         "mode": "a",
         "encoding": "utf-8"
       }
